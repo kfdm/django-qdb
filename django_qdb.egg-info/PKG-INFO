@@ -1,0 +1,16 @@
+Metadata-Version: 1.0
+Name: django-qdb
+Version: 0.0.1
+Summary: Quote Module for Django
+Home-page: http://github.com/kfdm/django-qdb/
+Author: Paul Traylor
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python

@@ -1,0 +1,10 @@
+setup.py
+django_qdb.egg-info/PKG-INFO
+django_qdb.egg-info/SOURCES.txt
+django_qdb.egg-info/dependency_links.txt
+django_qdb.egg-info/top_level.txt
+quotes/__init__.py
+quotes/admin.py
+quotes/models.py
+quotes/tests.py
+quotes/views.py
