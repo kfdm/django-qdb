@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>Quotes</h2>
+    <nav>
+        <ul>
+            <li><a href="/quotes/">Quotes</a></li>
+            <li><a href="/quotes/recent/">Recent</a></li>
+        </ul>
+    </nav>
+    <table>
+            <tr>
+                <th>ID</th>
+                <th>Body</th>
+            </tr>
+        {% for quote in object_list %}
+            <tr>
+                <td>{{ quote.id }}</td>
+                <td>{{ quote.body }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}
