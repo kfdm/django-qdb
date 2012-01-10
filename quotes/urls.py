@@ -20,6 +20,7 @@ urlpatterns = patterns('',
             },
         ),
     url('^/(?P<object_id>\d+)/$',
+        name='quotes_view',
         view=list_detail.object_detail,
         kwargs={
             'queryset': Quote.objects.all(),

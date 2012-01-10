@@ -1,19 +1,16 @@
-{% extends "base.html" %}
+{% extends "quote_base.html" %}
 
-{% block content %}
-<section>
-    <h2>Quotes</h2>
-    <table>
-            <tr>
-                <th>ID</th>
-                <th>Body</th>
-                <th>Created On</th>
-            </tr>
-            <tr>
-                <td>{{ object.id }}</td>
-                <td>{{ object.body }}</td>
-                <td>{{ object.created_on }}</td>
-            </tr>
-    </table>
-</section>
+{% block quotes_content %}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Body</th>
+        <th>Created On</th>
+    </tr>
+    <tr>
+        <td><a href="{% url quotes_view object.id %}">{{ object.id }}</a></td>
+        <td>{{ object.body }}</td>
+        <td>{{ object.created_on }}</td>
+    </tr>
+</table>
 {% endblock %}
