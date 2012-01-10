@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>Quotes</h2>
+    <table>
+            <tr>
+                <th>ID</th>
+                <th>Body</th>
+                <th>Created On</th>
+            </tr>
+            <tr>
+                <td>{{ object.id }}</td>
+                <td>{{ object.body }}</td>
+                <td>{{ object.created_on }}</td>
+            </tr>
+    </table>
+</section>
+{% endblock %}

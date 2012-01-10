@@ -18,5 +18,12 @@ urlpatterns = patterns('',
             'queryset': Quote.objects.order_by('created_on'),
             'template_name': 'quote_list_page.html',
             },
-        )
+        ),
+    url('^/(?P<object_id>\d+)/$',
+        view=list_detail.object_detail,
+        kwargs={
+            'queryset': Quote.objects.all(),
+            'template_name': 'quote_detail.html',
+            },
+        ),
 )
