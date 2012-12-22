@@ -7,4 +7,5 @@ quotes/__init__.py
 quotes/admin.py
 quotes/models.py
 quotes/tests.py
+quotes/urls.py
 quotes/views.py

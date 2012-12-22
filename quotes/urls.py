@@ -3,7 +3,7 @@ from django.views.generic import list_detail
 from quotes.models import Quote
 
 urlpatterns = patterns('',
-    url('^/$',
+    url('^$',
         name='quotes_index',
         view=list_detail.object_list,
         kwargs={
@@ -11,7 +11,7 @@ urlpatterns = patterns('',
             'template_name': 'quote_list_page.html',
             },
         ),
-    url('^/recent/',
+    url('^recent/',
         name='quotes_recent',
         view=list_detail.object_list,
         kwargs={
@@ -19,7 +19,7 @@ urlpatterns = patterns('',
             'template_name': 'quote_list_page.html',
             },
         ),
-    url('^/(?P<object_id>\d+)/$',
+    url('^(?P<object_id>\d+)/$',
         name='quotes_view',
         view=list_detail.object_detail,
         kwargs={
