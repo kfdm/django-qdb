@@ -9,7 +9,7 @@
 {% for quote in object_list %}
     <tr>
         <td>
-            <a href="{% url quotes_view quote.id %}">
+            <a href="{% url 'quotes_view' quote.id %}">
             {{ quote.id }}
             </a>
         </td>

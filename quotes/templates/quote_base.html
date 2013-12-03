@@ -5,8 +5,8 @@
     <h2>Quotes</h2>
     <nav>
         <ul>
-            <li><a href="{% url quotes_index %}">Quotes</a></li>
-            <li><a href="{% url quotes_recent %}">Recent</a></li>
+            <li><a href="{% url 'quotes_index' %}">Quotes</a></li>
+            <li><a href="{% url 'quotes_recent' %}">Recent</a></li>
         </ul>
     </nav>
     {% block quotes_content %}{% endblock %}

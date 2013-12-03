@@ -1,30 +1,27 @@
-from django.conf.urls.defaults import patterns, url
-from django.views.generic import list_detail
+from django.conf.urls import patterns, url
+from django.views.generic.list import ListView
 from quotes.models import Quote
 
 urlpatterns = patterns('',
     url('^$',
         name='quotes_index',
-        view=list_detail.object_list,
-        kwargs={
-            'queryset': Quote.objects.all(),
-            'template_name': 'quote_list_page.html',
-            },
+        view=ListView.as_view(
+            queryset=Quote.objects.all(),
+            template_name='quote_list_page.html'
+            ),
         ),
     url('^recent/',
         name='quotes_recent',
-        view=list_detail.object_list,
-        kwargs={
-            'queryset': Quote.objects.order_by('created_on'),
-            'template_name': 'quote_list_page.html',
-            },
+        view=ListView.as_view(
+            queryset=Quote.objects.order_by('created_on'),
+            template_name='quote_list_page.html'
+            ),
         ),
     url('^(?P<object_id>\d+)/$',
         name='quotes_view',
-        view=list_detail.object_detail,
-        kwargs={
-            'queryset': Quote.objects.all(),
-            'template_name': 'quote_detail.html',
-            },
+        view=ListView.as_view(
+            queryset=Quote.objects.all(),
+            template_name='quote_detail.html'
+            ),
         ),
 )
