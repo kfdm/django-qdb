@@ -16,9 +16,12 @@ class Migration(migrations.Migration):
             name='Quote',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('created', models.DateTimeField(auto_now_add=True)),
                 ('body', models.TextField()),
-                ('created_on', models.DateField(null=True, blank=True)),
-                ('poster', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(related_name='quotes', to=settings.AUTH_USER_MODEL)),
             ],
+            options={
+                'ordering': ('created',),
+            },
         ),
     ]
