@@ -10,7 +10,3 @@ class Quote(models.Model):
 
     class Meta:
         ordering = ('created',)
-
-    def __unicode__(self):
-        # For Django Admin Snippet
-        return self.body[0:20]
