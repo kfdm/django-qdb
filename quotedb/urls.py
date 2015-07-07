@@ -4,7 +4,7 @@ from quotedb.views import QuoteViewSet
 
 
 # Routers provide an easy way of automatically determining the URL conf.
-router = routers.DefaultRouter()
+router = routers.SimpleRouter()
 router.register(r'^', QuoteViewSet)
 
 # Wire up our API using automatic URL routing.

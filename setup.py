@@ -1,10 +1,10 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from quotedb import __version__
 
 setup(
     name='django-qdb',
     version=__version__,
-    packages=['quotedb', 'quotedb.migrations'],
+    packages=find_packages(exclude=['test']),
     include_package_data=True,
     license='MIT License',
     description='A simple quote database',
@@ -26,4 +26,9 @@ setup(
         'djangorestframework-word-filter',
         'djangorestframework',
     ],
+    entry_points={
+        'django.apps': [
+            'quotes = quotedb',
+        ],
+    },
 )
