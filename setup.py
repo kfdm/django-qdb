@@ -30,5 +30,8 @@ setup(
         'django.apps': [
             'quotes = quotedb',
         ],
+        'rest.apps': [
+            'quotes = quotedb.views:QuoteViewSet'
+        ]
     },
 )
