@@ -8,4 +8,4 @@ class Quote(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ('created',)
+        ordering = ('-created',)

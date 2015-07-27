@@ -3,9 +3,9 @@ from quotedb.models import Quote
 
 
 class QuoteAdmin(admin.ModelAdmin):
+    actions = ['mark_approved', 'mark_unapproved']
     list_display = ('body', 'owner', 'approved', 'created')
     list_filter = ('approved', 'owner',)
-    actions = ['mark_approved', 'mark_unapproved']
 
     def mark_approved(self, request, queryset):
         rows_updated = queryset.update(approved=True)
