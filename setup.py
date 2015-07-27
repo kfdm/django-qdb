@@ -27,11 +27,8 @@ setup(
         'djangorestframework',
     ],
     entry_points={
-        'django.apps': [
-            'quotes = quotedb',
-        ],
-        'rest.apps': [
-            'quotes = quotedb.views:QuoteViewSet'
-        ]
+        'django.apps': ['quotes = quotedb'],
+        'django.urls': ['quotes = quotedb.urls'],
+        'rest.apps': ['quotes = quotedb.views:QuoteViewSet']
     },
 )
