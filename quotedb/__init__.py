@@ -1,1 +1,2 @@
-__version__ = '0.1'
+from quotedb.version import __version__
+default_app_config = 'quotedb.apps.QuoteDBConfig'

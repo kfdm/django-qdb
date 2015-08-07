@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from quotedb import __version__
+from quotedb.version import __version__
 
 setup(
     name='django-qdb',
