@@ -27,8 +27,8 @@ setup(
         'djangorestframework',
     ],
     entry_points={
-        'django.apps': ['quotes = quotedb'],
-        'django.urls': ['quotes = quotedb.urls'],
-        'rest.apps': ['quotes = quotedb.views:QuoteViewSet']
+        'powerplug.apps': ['quotes = quotedb'],
+        'powerplug.urls': ['quotes = quotedb.urls'],
+        'powerplug.rest': ['quotes = quotedb.views:QuoteViewSet']
     },
 )
