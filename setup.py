@@ -23,7 +23,6 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
     install_requires=[
-        'djangorestframework-word-filter',
         'djangorestframework',
     ],
     entry_points={
