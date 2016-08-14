@@ -16,8 +16,9 @@ class QuoteViewSet(viewsets.ModelViewSet):
     serializer_class = QuoteSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
-    filter_backends = (filters.SearchFilter,)
+    filter_backends = (filters.SearchFilter, filters.DjangoFilterBackend,)
     search_fields = ('body',)
+    filter_fields = ('approved',)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

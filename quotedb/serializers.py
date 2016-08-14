@@ -7,4 +7,4 @@ class QuoteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Quote
-        fields = ('body', 'owner', 'created')
+        fields = ('body', 'owner', 'created', 'approved')
