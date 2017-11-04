@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Quotes</h1>
+
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'quotes:quote-list' %}">Quotes</a></li>
+  </ol>
+</nav>
+
+<div class="card">
+    <div class="card-header">{% include 'quotedb/quote_page.inc.html' %}</div>
+    <table class="table table-bordered">
+{% for quote in quote_list %}
+        <tr>
+            <td>{{quote.created}}</td>
+            <td><blockquote>{{quote.body|linebreaksbr}}</blockquote></td>
+        </tr>
+{% endfor %}
+    </table>
+    <div class="card-footer">{% include 'quotedb/quote_page.inc.html' %}</div>
+</div>
+
+{% endblock %}

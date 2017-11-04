@@ -1,12 +1,7 @@
-from rest_framework import routers
+from django.conf.urls import url
 
-from quotedb.views import QuoteViewSet
+from quotedb import views
 
-
-# Routers provide an easy way of automatically determining the URL conf.
-router = routers.SimpleRouter()
-router.register(r'^', QuoteViewSet)
-
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
-urlpatterns = router.urls
+urlpatterns = [
+    url(r'^$', views.QuoteList.as_view(), name='quote-list'),
+]

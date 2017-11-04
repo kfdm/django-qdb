@@ -28,6 +28,6 @@ setup(
     entry_points={
         'powerplug.apps': ['quotes = quotedb'],
         'powerplug.urls': ['quotes = quotedb.urls'],
-        'powerplug.rest': ['quotes = quotedb.views:QuoteViewSet']
+        'powerplug.rest': ['quotes = quotedb.rest:QuoteViewSet']
     },
 )
