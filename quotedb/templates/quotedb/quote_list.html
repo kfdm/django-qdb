@@ -15,7 +15,12 @@
     <table class="table table-bordered">
 {% for quote in quote_list %}
         <tr>
-            <td>{{quote.created}}</td>
+            <td>
+                {{quote.created}}
+                {% if user.is_superuser %}
+                <a href="{% url 'admin:quotedb_quote_change' quote.id %}">Edit</a>
+                {% endif %}
+            </td>
             <td><blockquote>{{quote.body|linebreaksbr}}</blockquote></td>
         </tr>
 {% endfor %}
