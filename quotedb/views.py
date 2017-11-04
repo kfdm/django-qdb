@@ -8,5 +8,5 @@ class QuoteDetail(DetailView):
 
 
 class QuoteList(ListView):
-    model = models.Quote
+    queryset = models.Quote.objects.filter(approved=True)
     paginate_by = 10
