@@ -24,6 +24,7 @@ setup(
     ],
     install_requires=[
         'djangorestframework',
+        'django-filter',
     ],
     entry_points={
         'powerplug.apps': ['quotes = quotedb'],

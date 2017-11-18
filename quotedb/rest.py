@@ -1,3 +1,4 @@
+import django_filters.rest_framework
 from rest_framework import filters, permissions, routers, viewsets
 from rest_framework.decorators import list_route
 from rest_framework.response import Response
@@ -16,7 +17,7 @@ class QuoteViewSet(viewsets.ModelViewSet):
     serializer_class = QuoteSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
-    filter_backends = (filters.SearchFilter, filters.DjangoFilterBackend,)
+    filter_backends = (filters.SearchFilter, django_filters.rest_framework.DjangoFilterBackend,)
     search_fields = ('body',)
     filter_fields = ('approved',)
 
