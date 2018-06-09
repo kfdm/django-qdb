@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('body', models.TextField()),
                 ('approved', models.BooleanField(default=False)),
-                ('owner', models.ForeignKey(related_name='quotes', to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(related_name='quotes', to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)),
             ],
             options={
                 'ordering': ('created',),
