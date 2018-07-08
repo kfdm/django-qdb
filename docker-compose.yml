@@ -1,0 +1,9 @@
+version: '3'
+services:
+  base:
+    build: .
+    image: quotedb
+    ports:
+    - "8080:8000"
+    environment:
+      DATABASE_URL: postgres://postgres@172.17.0.1/quotedb
