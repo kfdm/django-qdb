@@ -1,8 +1,9 @@
-import os
-
+import pathlib
 import environ
 
 from django.urls import reverse_lazy
+
+BASE_DIR = pathlib.Path(__file__).parent.parent.parent
 
 env = environ.Env()
 try:
@@ -13,15 +14,14 @@ except FileNotFoundError:
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["*"])
-
 
 # Application definition
 
@@ -74,8 +74,8 @@ WSGI_APPLICATION = "quotedb.standalone.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {"default": env.db()}
+DEFAULT_DATABASE = BASE_DIR / "db.sqlite3"
+DATABASES = {"default": env.db(default="sqlite://%s" % DEFAULT_DATABASE)}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -105,8 +105,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATIC_DEFAULT = pathlib.Path.home() / ".cache" / "quotedb"
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.expanduser(env("STATIC_ROOT", default="~/.cache/quotedb"))
+STATIC_ROOT = env("STATIC_ROOT", default=STATIC_DEFAULT)
 
 LOGIN_REDIRECT_URL = reverse_lazy("quotes:quote-list")
 
