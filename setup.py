@@ -4,7 +4,7 @@ from quotedb.version import __version__
 setup(
     name='django-qdb',
     version=__version__,
-    packages=find_packages(exclude=["test"]),
+    packages=find_packages(exclude=["tests"]),
     include_package_data=True,
     license="MIT License",
     description="A simple quote database",

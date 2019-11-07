@@ -1,3 +1,4 @@
+.PHONY:	test
 test:
 	pipenv run quotedb test -v 2
 build:

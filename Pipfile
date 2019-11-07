@@ -11,7 +11,7 @@ python-dateutil = "*"
 pytz = "*"
 prometheus-client = "*"
 django-environ = "*"
-quotedb = {editable = true,path = "."}
+quotedb = {editable = true, extras = ["standalone"],path = "."}
 
 [dev-packages]
 "psycopg2-binary" = "*"
