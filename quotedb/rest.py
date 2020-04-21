@@ -1,6 +1,6 @@
 import django_filters.rest_framework
 from rest_framework import filters, permissions, routers, viewsets
-from rest_framework.decorators import list_route
+from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from quotedb.models import Quote
@@ -24,7 +24,7 @@ class QuoteViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-    @list_route()
+    @action(detail=False)
     def random(self, request):
         queryset = Quote.objects.order_by('?').first()
         serializer = self.serializer_class(queryset)
